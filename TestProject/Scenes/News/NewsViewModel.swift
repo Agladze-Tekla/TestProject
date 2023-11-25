@@ -24,11 +24,11 @@ final class DefaultNewsViewModel: NewsViewModel {
     
     private var newsList = [News]()
 
-    var delegate: NewsViewModelDelegate?
+    weak var delegate: NewsViewModelDelegate?
 
     // MARK: - Public Methods
     func viewDidLoad() {
-        //fetchNews()
+        fetchNews()
     }
     
     // MARK: - Private Methods
@@ -37,6 +37,7 @@ final class DefaultNewsViewModel: NewsViewModel {
             switch result {
             case .success(let article):
                 self?.delegate?.newsFetched(newsList)
+                 
                 self?.newsList.append(article.articles)
             case .failure(let error):
                 self?.delegate?.showError(error)
