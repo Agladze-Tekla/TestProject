@@ -24,7 +24,7 @@ final class DefaultNewsViewModel: NewsViewModel {
     
     private var newsList = [News]()
 
-    weak var delegate: NewsViewModelDelegate?
+    var delegate: NewsViewModelDelegate?
 
     // MARK: - Public Methods
     func viewDidLoad() {
@@ -33,12 +33,12 @@ final class DefaultNewsViewModel: NewsViewModel {
     
     // MARK: - Private Methods
     private func fetchNews() {
-        NetworkManager.shared.get(url: newsAPI) { [weak self] (result: Result<Article, Error>) in
+        NetworkManager.shared.get(urlString: newsAPI) { [weak self] (result: Result<Article, Error>) in
             switch result {
             case .success(let article):
-                self?.delegate?.newsFetched(newsList)
+                self?.delegate?.newsFetched(self?.newsList ?? [])
                  
-                self?.newsList.append(article.articles)
+                self?.newsList.append(contentsOf: article.articles)
             case .failure(let error):
                 self?.delegate?.showError(error)
             }

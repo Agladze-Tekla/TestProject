@@ -47,14 +47,14 @@ final class NewsViewController: UIViewController {
 // MARK: - TableViewDataSource
 extension NewsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        news.count
+       return news.count
         #warning("If we had zero there, we would not get any visuals, so instead changed it to news.count, so tableView cell number is the same as the news number.")
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "newsCell", for: indexPath) as? NewsTableViewCell else {
             fatalError("Could not dequeue NewsCell")
-            return UITableViewCell
+            return UITableViewCell()
         }
         #warning("Next time make sure the cell identifier is the same everywhere")
         cell.configure(with: news[indexPath.row])
@@ -65,7 +65,7 @@ extension NewsViewController: UITableViewDataSource {
 // MARK: - TableViewDelegate
 extension NewsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        70
+        return 70
         #warning("Zero would mean nothing would show, since it's the height")
     }
 }

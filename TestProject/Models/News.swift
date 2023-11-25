@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct News {
+struct News: Decodable {
     let authors: String?
     let title: String?
     let urlToImage: String?

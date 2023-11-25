@@ -6,15 +6,17 @@
 //
 
 import UIKit
-import Kingfisher
+//import Kingfisher
 
-final class NewsTableViewCell: UICollectionViewCell {
-
+final class NewsTableViewCell: UITableViewCell {
+    #warning("Make sure it is the right ViewCell")
+    
     // MARK: - UI Elements
     private var newsImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
+        #warning("Since all of them are in a stack, we don't need translate.. = false")
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.widthAnchor.constraint(equalToConstant: 120).isActive = true
         imageView.heightAnchor.constraint(equalToConstant: 117).isActive = true
@@ -23,17 +25,14 @@ final class NewsTableViewCell: UICollectionViewCell {
 
     private var newsTitleLabel: UILabel = {
         let label = UILabel()
-        label.numberOfLines = 0
+        label.numberOfLines = 3//0
         label.font = UIFont.systemFont(ofSize: 17, weight: .bold)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.isHidden = true
         return label
     }()
 
     private var newsAuthorLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 17)
-        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
 
@@ -41,13 +40,11 @@ final class NewsTableViewCell: UICollectionViewCell {
         let stackView = UIStackView(arrangedSubviews: [newsTitleLabel, newsAuthorLabel])
         stackView.axis = .vertical
         stackView.spacing = 4
-        stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
 
     private lazy var mainStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [newsImageView, textStackView])
-        stackView.axis = .horizontal
         stackView.spacing = 10
         stackView.alignment = .center
         stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -80,9 +77,9 @@ final class NewsTableViewCell: UICollectionViewCell {
     }
 
     // MARK: - Configure
-    private func configure(with news: News) {
+    func configure(with news: News) {
         let url = URL(string: news.urlToImage ?? "")
-        newsImageView.kf.setImage(with: url)
+        //newsImageView.kf.setImage(with: url)
         newsTitleLabel.text = news.title
         newsAuthorLabel.text = news.authors
     }

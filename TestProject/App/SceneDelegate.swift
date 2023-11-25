@@ -19,7 +19,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
         window?.rootViewController = UINavigationController(rootViewController: NewsViewController())
-        #error("We doin't have a view named UIViewController())")
         window?.makeKeyAndVisible()
     }
 
