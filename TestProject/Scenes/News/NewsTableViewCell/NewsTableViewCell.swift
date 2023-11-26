@@ -61,6 +61,14 @@ final class NewsTableViewCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    // MARK: - PrepareForReuse
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        newsTitleLabel.text = nil
+        newsAuthorLabel.text = nil
+    }
 
     // MARK: - Setup
     private func setupSubviews() {
@@ -78,8 +86,6 @@ final class NewsTableViewCell: UITableViewCell {
 
     // MARK: - Configure
     func configure(with news: News) {
-        let url = URL(string: news.urlToImage ?? "")
-        //newsImageView.kf.setImage(with: url)
         newsTitleLabel.text = news.title
         newsAuthorLabel.text = news.authors
     }

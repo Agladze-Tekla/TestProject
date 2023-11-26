@@ -9,5 +9,4 @@ import Foundation
 
 struct Article: Decodable {
     let articles: [News]
-    #warning("use braces [], since it is an array of things")
 }

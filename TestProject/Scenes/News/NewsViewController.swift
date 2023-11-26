@@ -16,7 +16,7 @@ final class NewsViewController: UIViewController {
     }()
     
     private var news = [News]()
-    private var viewModel  = DefaultNewViewModel()
+    private var viewModel  = DefaultNewsViewModel()
 
     // MARK: - View life cycle
     override func viewDidLoad() {

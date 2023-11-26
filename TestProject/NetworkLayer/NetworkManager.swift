@@ -12,7 +12,7 @@ final class NetworkManager {
     static let shared = NetworkManager()
     #warning("shared has to be static")
     
-    public init() {}
+    private init() {}
     
     func get<T: Decodable>(urlString: String, completion: @escaping ((Result<T, Error>) -> Void)) {
         #warning("We did not have an actual url in URL(), and changed the name to urlString, so it did not match url")
@@ -26,23 +26,19 @@ final class NetworkManager {
             
             if let error = error {
                 completion(.failure(error))
-                #warning("Missing error = error, and checked my previous homework, dispatcgQueu was nor needed")
+                #warning("Missing error = error, and checked my previous homework, dispatcgQueu was not needed")
                 return
             }
             
-            guard let data = data else {
-                completion(.failure(NSError(domain: "", code: -2, userInfo:[NSLocalizedDescriptionKey: "No data received"])))
-                #warning("Didn't equal data to data")
-                return }
+            guard let data = data else { return }
             
             do {
                 let decoded = try JSONDecoder().decode(T.self, from: data)
                 completion(.success(decoded))
-                #warning("decoeded.data to get the data")
             } catch let error {
                 completion(.failure(error))
             }
         }.resume()
-        #warning("To resume with the app;ication")
+        #warning("To resume the application")
     }
 }
