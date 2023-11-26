@@ -23,6 +23,7 @@ final class NewsViewController: UIViewController {
         super.viewDidLoad()
 
         setupTableView()
+        setupViewModel()
         viewModel.viewDidLoad()
     }
     
@@ -38,9 +39,14 @@ final class NewsViewController: UIViewController {
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
-            tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-            tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor)
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
+    }
+    
+    //MARK: Setup delegates
+    private func setupViewModel() {
+        viewModel.delegate = self
     }
 }
 
@@ -74,10 +80,9 @@ extension NewsViewController: UITableViewDelegate {
 extension NewsViewController: NewsViewModelDelegate {
     func newsFetched(_ news: [News]) {
         self.news = news
-        self.tableView.reloadData()
-        //DispatchQueue.main.async {
-          //  self.tableView.reloadData()
-        //}
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
         //#warning("In order for the code to work smoothely added dispatchQueue.")
     }
     

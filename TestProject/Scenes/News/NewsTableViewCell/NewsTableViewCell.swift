@@ -77,10 +77,10 @@ final class NewsTableViewCell: UITableViewCell {
 
     private func setupConstraints() {
         NSLayoutConstraint.activate([
-            mainStackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20),
-            mainStackView.leadingAnchor.constraint(equalTo: contentView.rightAnchor, constant: 10),
-            mainStackView.trailingAnchor.constraint(equalTo: contentView.leftAnchor, constant: -10),
-            mainStackView.bottomAnchor.constraint(equalTo: contentView.topAnchor, constant: -20)
+            mainStackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
+            mainStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
+            mainStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
+            mainStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10)
         ])
     }
 
