@@ -9,14 +9,14 @@ import UIKit
 //import Kingfisher
 
 final class NewsTableViewCell: UITableViewCell {
-    #warning("Make sure it is the right ViewCell")
+    //#warning("Make sure it is the right ViewCell")
     
     // MARK: - UI Elements
     private var newsImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
-        #warning("Since all of them are in a stack, we don't need translate.. = false")
+        //#warning("Since all of them are in a stack, we don't need translate.. = false")
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.widthAnchor.constraint(equalToConstant: 120).isActive = true
         imageView.heightAnchor.constraint(equalToConstant: 117).isActive = true

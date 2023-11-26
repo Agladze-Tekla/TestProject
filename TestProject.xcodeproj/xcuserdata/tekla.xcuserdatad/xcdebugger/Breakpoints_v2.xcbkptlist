@@ -46,8 +46,8 @@
             filePath = "TestProject/Scenes/News/NewsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
             landmarkName = "newsFetched(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -97,22 +97,6 @@
             startingLineNumber = "90"
             endingLineNumber = "90"
             landmarkName = "configure(with:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "D713D860-9218-4901-98B3-38A568C541E3"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TestProject/Scenes/News/NewsViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
-            landmarkName = "fetchNews()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -433,22 +417,6 @@
             startingLineNumber = "30"
             endingLineNumber = "30"
             landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "CD4D2FC4-FB33-4B6F-BF4E-028DDD65B47B"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TestProject/Scenes/News/NewsViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
-            landmarkName = "fetchNews()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
